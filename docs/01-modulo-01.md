@@ -63,6 +63,28 @@ El servidor central del sistema **SIMGESRC** debe ser configurado para soportar 
 - **Throughput de Red Sostenido:** El enlace agregado proporciona hasta **20 Gbps de ancho de banda teórico** . El procesamiento de las tramas biométricas de las incubadoras consume apenas ~15 Mbps (tramas livianas continuas), dejando el remanente libre para la transferencia fluida de archivos DICOM de imágenes médicas a las terminales de los especialistas. 
 
 ## **1.3. Arquitectura del Kernel y Diagrama de Flujo** 
+```text
++-----------------------------------------------------------------------------------+
+|                                 MODO USUARIO                                      |
+|  [Terminal Admission/Triaje]    [Monitores UCIN (1000ms)]    [Estación Ecografía]  |
+|               |                             |                             |       |
+|        +--------------+              +--------------+              +------------+ |
+|        | Driver Red   |              | App Telemetría|             | Base Datos | |
+|        +--------------+              +--------------+              +------------+ |
++---------------+-----------------------------+-----------------------------+-------+
+                | IPC                         | IPC                         | Alloc
++---------------+-----------------------------+-----------------------------+-------+
+                |                             |                             |       |
+|  +-----------------------------------------------------------------------------+  |
+|  |                CORE SIMGESRC MICROKERNEL (PREEMPT_RT)                       |  |
+|  |                                                                             |  |
+|  |   +--------------------+    +--------------------+    +------------------+  |  |
+|  |   | CPU Scheduler      |    | MMU Memory Manager |    | Sync Engine      |  |  |
+|  |   | (RT / Preemption)  |    | (Paginación 4KB)   |    | (Mutex / Sem)    |  |  |
+|  |   +--------------------+    +--------------------+    +------------------+  |  |
+|  +-----------------------------------------------------------------------------+  |
+|                                  MODO KERNEL                                      |
++-----------------------------------------------------------------------------------+
 
 ### **_1.3.1. Justificación de la Arquitectura del Kernel y Modos de Ejecución_** 
 
