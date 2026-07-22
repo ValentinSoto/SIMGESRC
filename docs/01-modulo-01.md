@@ -90,7 +90,7 @@ Kernel. Al reconocer que el identificador del hilo de destino pertenece a la sub
 
 4. **Visualización en Tiempo Real:** El hilo de la aplicación central de la UCIN lee los datos limpios y actualiza la pantalla del panel de enfermería en un tiempo determinista inferior a 5 milisegundos desde que el dato golpeó la tarjeta de red del servidor central, asegurando un monitoreo libre de desfases de tiempo. Por debajo de esta prioridad, las terminales de triaje y admisión acceden de forma intercalada a la CPU mediante ventanas de tiempo compartido.
 
-### 1.3.3. Diagrama de Arquitectura **
+### 1.3.3. Diagrama de Arquitectura
 
 ```text
 +-----------------------------------------------------------------------------------+
