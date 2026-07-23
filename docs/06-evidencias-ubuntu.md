@@ -9,9 +9,9 @@ Este documento reúne la evidencia fotográfica y las capturas de pantalla del d
 ![Arquitectura del Sistema](../assets/img/creacion-src.png)
 
 
-## Figura 2. Verificando la crearcion del proyecto
+## Figura 2. Verificando la creación del proyecto
 
-![Arquitectura del Sistema](../assets/img/kernel-integrado.png)
+![Arquitectura del Sistema](../assets/img/comprobando.png)
 
 
 ## Figura 3. Módulo de Memoria
