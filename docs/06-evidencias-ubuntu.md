@@ -2,13 +2,28 @@
 
 Este documento reúne la evidencia fotográfica y las capturas de pantalla del despliegue, preparación del entorno y prueba de los componentes del sistema **SIMGESRC** sobre el sistema operativo **Ubuntu Linux**.
 
----
+# Figura
 
-## 🛠️ Paso 1: Preparar el Entorno en Ubuntu
+## Figura 1. Creación de la Estructura del Proyecto
 
-Actualización de los repositorios del sistema y verificación/instalación de las herramientas requeridas (`python3` y `git`).
+![Arquitectura del Sistema](../assets/img/creacion-src.png)
 
-```bash
-sudo apt update && sudo apt upgrade -y
-sudo apt install python3 git -y
-python3 --version
+
+## Figura 2. Verificando la crearcion del proyecto
+
+![Arquitectura del Sistema](../assets/img/kernel-integrado.png)
+
+
+## Figura 3. Módulo de Memoria
+
+![Arquitectura del Sistema](../assets/img/memoria.png)
+
+
+## Figura 4. Módulo de Sincronización
+
+![Arquitectura del Sistema](../assets/img/sincronizacion.png)
+
+## Figura 5. Kernel Integrado
+
+![Arquitectura del Sistema](../assets/img/kernel-integrado.png)
+
